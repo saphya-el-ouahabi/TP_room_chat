@@ -1,12 +1,26 @@
+
+
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var i;
+const mongoose = require('mongoose');
+//const bodyParser = require('body-parser');
 
 var redis = require('redis');
 var client = redis.createClient(); 
 
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chat_TP5_6', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
+
+//app.use(bodyParser.urlencoded({ extended: true }));
+
+const messageRoutes = require("./routes/msg");
+app.use('/message', messageRoutes);
 
 /**
  * Gestion des requêtes HTTP des utilisateurs en leur renvoyant les fichiers du dossier 'public'
