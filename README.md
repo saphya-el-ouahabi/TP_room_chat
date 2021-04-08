@@ -4,7 +4,15 @@ mini projet en INFO834
 
 base : https://blog.bini.io/developper-une-application-avec-socket-io/
 
+##Installation
+Si vous n'avez pas bower d'installé sur votre machine, installez-le au préalable de la façon suivante :
+```npm install -g bower```
 
+Pour installer l'application, téléchargez les sources (zip ou git clone) et exécutez la commande suivante depuis la racine du projet.
+```npm install```
+```bower install```
+
+Pour utiliser le mini-chat, il suffit de lancer le fichier server.js et de rentrer son username.
 
 ## Fonctionnalités du mini-chat :
 
